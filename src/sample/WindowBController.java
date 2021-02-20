@@ -24,7 +24,9 @@ public class WindowBController {
     }
 
     public void onClickCreateCustomerForm(ActionEvent actionEvent) throws IOException{
-        System.out.println("button clicked");
+        Stage window = (Stage) windowB.getScene().getWindow();
+        window.setScene(new Scene(FXMLLoader.load(getClass().getResource("customerForm.fxml"))));
+        window.centerOnScreen();
 
     }
 }

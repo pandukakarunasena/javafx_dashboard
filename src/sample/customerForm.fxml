@@ -10,9 +10,9 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CustomerFormController">
+<AnchorPane fx:id="customerFormPanel" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CustomerFormController">
    <children>
-      <Label layoutX="23.0" layoutY="14.0" text="Customer Form">
+      <Label layoutX="252.0" layoutY="15.0" text="Customer Form">
          <font>
             <Font size="14.0" />
          </font>
@@ -28,12 +28,12 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <TableView prefHeight="200.0" prefWidth="552.0">
+                  <TableView fx:id="customerTable" onMouseClicked="#selectCustomer" prefHeight="200.0" prefWidth="552.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="customer ID" />
-                      <TableColumn prefWidth="75.0" text="customer name" />
-                        <TableColumn prefWidth="75.0" text="customer address" />
-                        <TableColumn prefWidth="75.0" text="salary" />
+                      <TableColumn fx:id="colId" prefWidth="75.0" text="customer ID" />
+                      <TableColumn fx:id="colName" prefWidth="75.0" text="customer name" />
+                        <TableColumn fx:id="colAddress" prefWidth="75.0" text="customer address" />
+                        <TableColumn fx:id="colSalary" prefWidth="75.0" text="salary" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -43,5 +43,6 @@
             </AnchorPane>
         </content>
       </ScrollPane>
+      <Button fx:id="backToDashboard" layoutX="20.0" layoutY="12.0" mnemonicParsing="false" onAction="#onClickActionBackToDashBoard" style="-fx-background-color: #B3C100;" text="Back to Dashboard" />
    </children>
 </AnchorPane>
